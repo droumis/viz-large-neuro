@@ -1,0 +1,310 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 404" width="760" height="404" role="img" aria-label="Four stored resolution levels covering the same extent, with the zoom selecting one">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="759" height="403" fill="#ffffff" stroke="#b8c0c4" stroke-width="1" rx="4"/>
+<text x="24" y="30" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#1f2328" text-anchor="start" font-weight="600" font-style="normal">Multiscale pyramid</text>
+<text x="24" y="46" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">for data larger than memory, or a reduction too slow to repeat</text>
+<text x="14" y="160" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">level 0</text>
+<text x="14" y="171" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="9" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">full resolution</text>
+<text x="14" y="195" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">level 1</text>
+<text x="14" y="230" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">level 2</text>
+<text x="14" y="265" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">level 3</text>
+<text x="14" y="276" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="9" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">coarsest</text>
+<text x="104" y="80" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="600" font-style="normal">zoomed out</text>
+<text x="104" y="95" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">the whole recording</text>
+<rect x="104.0" y="124" width="236.0" height="158" fill="#0f766e" fill-opacity="0.07"/>
+<rect x="104.0" y="124" width="236.0" height="14" rx="0" fill="#ccfbf1" stroke="#0f766e" stroke-width="1"/>
+<text x="104.0" y="118" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#0f766e" text-anchor="start" font-weight="normal" font-style="normal">viewport</text>
+<rect x="104.00" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="107.69" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="111.38" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="115.06" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="118.75" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="122.44" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="126.12" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="129.81" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="133.50" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="137.19" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="140.88" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="144.56" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="148.25" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="151.94" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="155.62" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="159.31" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="163.00" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="166.69" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="170.38" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="174.06" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="177.75" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="181.44" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="185.12" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="188.81" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="192.50" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="196.19" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="199.88" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="203.56" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="207.25" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="210.94" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="214.62" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="218.31" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="222.00" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="225.69" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="229.38" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="233.06" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="236.75" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="240.44" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="244.12" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="247.81" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="251.50" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="255.19" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="258.88" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="262.56" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="266.25" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="269.94" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="273.62" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="277.31" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="281.00" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="284.69" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="288.38" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="292.06" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="295.75" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="299.44" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="303.12" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="306.81" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="310.50" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="314.19" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="317.88" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="321.56" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="325.25" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="328.94" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="332.62" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="336.31" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="104" y="150" width="236" height="22" rx="0" fill="none" stroke="#6b7280" stroke-width="1.0"/>
+<text x="348" y="165" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">64</text>
+<text x="370" y="165" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">in view</text>
+<rect x="104.00" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="111.38" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="118.75" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="126.12" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="133.50" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="140.88" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="148.25" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="155.62" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="163.00" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="170.38" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="177.75" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="185.12" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="192.50" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="199.88" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="207.25" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="214.62" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="222.00" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="229.38" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="236.75" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="244.12" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="251.50" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="258.88" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="266.25" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="273.62" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="281.00" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="288.38" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="295.75" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="303.12" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="310.50" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="317.88" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="325.25" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="332.62" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="104" y="185" width="236" height="22" rx="0" fill="none" stroke="#6b7280" stroke-width="1.0"/>
+<text x="348" y="200" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">32</text>
+<text x="370" y="200" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">in view</text>
+<rect x="104.00" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="118.75" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="133.50" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="148.25" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="163.00" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="177.75" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="192.50" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="207.25" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="222.00" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="236.75" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="251.50" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="266.25" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="281.00" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="295.75" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="310.50" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="325.25" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="104" y="220" width="236" height="22" rx="0" fill="none" stroke="#6b7280" stroke-width="1.0"/>
+<text x="348" y="235" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">16</text>
+<text x="370" y="235" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">in view</text>
+<rect x="104.00" y="255" width="29.50" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="133.50" y="255" width="29.50" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="163.00" y="255" width="29.50" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="192.50" y="255" width="29.50" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="222.00" y="255" width="29.50" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="251.50" y="255" width="29.50" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="281.00" y="255" width="29.50" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="310.50" y="255" width="29.50" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="104" y="255" width="236" height="22" rx="0" fill="none" stroke="#0f766e" stroke-width="1.8"/>
+<text x="348" y="270" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#0f766e" text-anchor="start" font-weight="600" font-style="normal">8</text>
+<text x="370" y="270" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#0f766e" text-anchor="start" font-weight="normal" font-style="normal">in view</text>
+<path d="M104.0 290 L104 302 M340.0 290 L340 302" stroke="#0f766e" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55" fill="none"/>
+<rect x="104.0" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="143.33333333333334" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="182.66666666666669" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="222.0" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="261.33333333333337" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="300.6666666666667" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<text x="104" y="327" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">the plot, 6 pixels wide</text>
+<text x="104" y="348" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#0f766e" text-anchor="start" font-weight="600" font-style="normal">level 3 is the coarsest level with</text>
+<text x="104" y="362" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#0f766e" text-anchor="start" font-weight="normal" font-style="normal">at least one sample per pixel</text>
+<text x="436" y="80" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="600" font-style="normal">zoomed in far</text>
+<text x="436" y="95" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">a short window</text>
+<rect x="539.8" y="124" width="28.3" height="158" fill="#0f766e" fill-opacity="0.07"/>
+<rect x="539.84" y="124" width="28.32000000000005" height="14" rx="0" fill="#ccfbf1" stroke="#0f766e" stroke-width="1"/>
+<text x="539.84" y="118" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#0f766e" text-anchor="start" font-weight="normal" font-style="normal">viewport</text>
+<rect x="436.00" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="439.69" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="443.38" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="447.06" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="450.75" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="454.44" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="458.12" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="461.81" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="465.50" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="469.19" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="472.88" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="476.56" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="480.25" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="483.94" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="487.62" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="491.31" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="495.00" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="498.69" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="502.38" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="506.06" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="509.75" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="513.44" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="517.12" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="520.81" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="524.50" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="528.19" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="531.88" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="535.56" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="539.25" y="150" width="3.69" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="542.94" y="150" width="3.69" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="546.62" y="150" width="3.69" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="550.31" y="150" width="3.69" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="554.00" y="150" width="3.69" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="557.69" y="150" width="3.69" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="561.38" y="150" width="3.69" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="565.06" y="150" width="3.69" height="22" fill="#0f766e" fill-opacity="0.45" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="568.75" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="572.44" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="576.12" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="579.81" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="583.50" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="587.19" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="590.88" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="594.56" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="598.25" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="601.94" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="605.62" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="609.31" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="613.00" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="616.69" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="620.38" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="624.06" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="627.75" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="631.44" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="635.12" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="638.81" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="642.50" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="646.19" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="649.88" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="653.56" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="657.25" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="660.94" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="664.62" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="668.31" y="150" width="3.69" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="436" y="150" width="236" height="22" rx="0" fill="none" stroke="#0f766e" stroke-width="1.8"/>
+<text x="680" y="165" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#0f766e" text-anchor="start" font-weight="600" font-style="normal">7</text>
+<text x="702" y="165" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#0f766e" text-anchor="start" font-weight="normal" font-style="normal">in view</text>
+<rect x="436.00" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="443.38" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="450.75" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="458.12" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="465.50" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="472.88" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="480.25" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="487.62" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="495.00" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="502.38" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="509.75" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="517.12" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="524.50" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="531.88" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="539.25" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="546.62" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="554.00" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="561.38" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="568.75" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="576.12" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="583.50" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="590.88" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="598.25" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="605.62" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="613.00" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="620.38" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="627.75" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="635.12" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="642.50" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="649.88" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="657.25" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="664.62" y="185" width="7.38" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="436" y="185" width="236" height="22" rx="0" fill="none" stroke="#6b7280" stroke-width="1.0"/>
+<text x="680" y="200" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">3</text>
+<text x="702" y="200" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">in view</text>
+<rect x="436.00" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="450.75" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="465.50" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="480.25" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="495.00" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="509.75" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="524.50" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="539.25" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="554.00" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="568.75" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="583.50" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="598.25" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="613.00" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="627.75" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="642.50" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="657.25" y="220" width="14.75" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="436" y="220" width="236" height="22" rx="0" fill="none" stroke="#6b7280" stroke-width="1.0"/>
+<text x="680" y="235" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">1</text>
+<text x="702" y="235" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">in view</text>
+<rect x="436.00" y="255" width="29.50" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="465.50" y="255" width="29.50" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="495.00" y="255" width="29.50" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="524.50" y="255" width="29.50" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="554.00" y="255" width="29.50" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="583.50" y="255" width="29.50" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="613.00" y="255" width="29.50" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="642.50" y="255" width="29.50" height="22" fill="#ffffff" fill-opacity="1" stroke="#d6dbdf" stroke-width="0.5"/>
+<rect x="436" y="255" width="236" height="22" rx="0" fill="none" stroke="#6b7280" stroke-width="1.0"/>
+<text x="680" y="270" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">0</text>
+<text x="702" y="270" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">in view</text>
+<path d="M539.8 290 L436 302 M568.2 290 L672 302" stroke="#0f766e" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55" fill="none"/>
+<rect x="436.0" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="475.3333333333333" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="514.6666666666666" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="554.0" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="593.3333333333334" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<rect x="632.6666666666667" y="302" width="39.333333333333336" height="11" rx="0" fill="#ffffff" stroke="#6b7280" stroke-width="0.7"/>
+<text x="436" y="327" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">the plot, 6 pixels wide</text>
+<text x="436" y="348" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#0f766e" text-anchor="start" font-weight="600" font-style="normal">level 0 is the coarsest level with</text>
+<text x="436" y="362" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#0f766e" text-anchor="start" font-weight="normal" font-style="normal">at least one sample per pixel</text>
+<line x1="415" y1="72" x2="415" y2="310" stroke="#d6dbdf" stroke-width="1"/>
+<text x="24" y="394" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal" font-style="italic">Every level covers the whole recording, and only the resolution differs. The finest is dashed because it is referenced, not written.</text>
+</svg>

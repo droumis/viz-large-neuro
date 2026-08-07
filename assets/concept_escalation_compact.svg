@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="700" height="350" role="img" aria-label="Three tiers of reduction, cheapest first, each with what it reduces">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="699" height="349" fill="#ffffff" stroke="#b8c0c4" stroke-width="1" rx="4"/>
+<text x="24" y="30" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#1f2328" text-anchor="start" font-weight="600" font-style="normal">Start with the cheapest reduction</text>
+<text x="24" y="48" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">Each tier is only needed if the one above it is not enough.</text>
+<rect x="24" y="62" width="652" height="34" rx="4" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.2"/>
+<text x="36" y="84" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#0f766e" text-anchor="start" font-weight="600" font-style="normal">A plot has only as many pixels as its window, perhaps one or two thousand across.</text>
+<rect x="24" y="112" width="652" height="58" rx="4" fill="#fbfcfc" stroke="#6b7280" stroke-width="1.2"/>
+<rect x="24" y="112" width="5" height="58" fill="#0f766e" fill-opacity="1.00"/>
+<text x="44" y="134" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="start" font-weight="600" font-style="normal">1.</text>
+<text x="66" y="134" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2328" text-anchor="start" font-weight="600" font-style="normal">Reduce what is sent</text>
+<text x="244" y="134" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#0f766e" text-anchor="start" font-weight="600" font-style="normal">rasterize, or downsample</text>
+<text x="66" y="154" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="italic">Often enough on its own, whenever the visible window can be reduced quickly.</text>
+<line x1="350.0" y1="172" x2="350.0" y2="184" stroke="#6b7280" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="360.0" y="183" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">not enough</text>
+<rect x="24" y="186" width="652" height="58" rx="4" fill="#fbfcfc" stroke="#6b7280" stroke-width="1.2"/>
+<rect x="24" y="186" width="5" height="58" fill="#0f766e" fill-opacity="0.72"/>
+<text x="44" y="208" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="start" font-weight="600" font-style="normal">2.</text>
+<text x="66" y="208" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2328" text-anchor="start" font-weight="600" font-style="normal">Reduce what is read</text>
+<text x="244" y="208" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#0f766e" text-anchor="start" font-weight="600" font-style="normal">a written pyramid</text>
+<text x="66" y="228" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="italic">Needed once reducing the widest view is too slow, or the data exceeds memory.</text>
+<line x1="350.0" y1="246" x2="350.0" y2="258" stroke="#6b7280" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="360.0" y="257" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="normal">not enough</text>
+<rect x="24" y="260" width="652" height="58" rx="4" fill="#fbfcfc" stroke="#6b7280" stroke-width="1.2"/>
+<rect x="24" y="260" width="5" height="58" fill="#0f766e" fill-opacity="0.44"/>
+<text x="44" y="282" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="start" font-weight="600" font-style="normal">3.</text>
+<text x="66" y="282" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2328" text-anchor="start" font-weight="600" font-style="normal">Reduce what is stored</text>
+<text x="244" y="282" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12" fill="#0f766e" text-anchor="start" font-weight="600" font-style="normal">a reference, not a copy</text>
+<text x="66" y="302" font-family="-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="start" font-weight="normal" font-style="italic">Storage, not display. This tier changes nothing about what is drawn.</text>
+</svg>

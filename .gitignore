@@ -1,0 +1,21 @@
+# Generated and downloaded data. Everything here is reproducible; see README.
+data/
+
+# pixi environments
+.pixi/
+
+# Python
+__pycache__/
+*.pyc
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local agent tooling config, machine specific
+.claude/
+
+# Local working notes, reviews, and build records. Not part of the published repo.
+scratch-dr/
+
+# macOS
+.DS_Store
