@@ -82,11 +82,11 @@ lint-layout = "python $HOLOVIZ_SKILLS/developing-with-holoviz/skills/panel/scrip
 cmd = "panel serve large_array_viz.ipynb --show"
 description = "Serve the notebook as a standalone app"
 
-# The committed .ipynb is kept free of outputs, so the repository stays small and diffs stay
-# readable. jupytext writes no outputs, so this is simply the conversion.
+# `--update` keeps cell ids, so the diff is limited to the cells that changed. It also keeps
+# outputs, which the committed notebook does not carry, hence the clearing step.
 [tasks.notebook]
-cmd = "python -m jupytext --to notebook large_array_viz.py -o large_array_viz.ipynb"
-description = "Rebuild the .ipynb from the .py, without outputs"
+cmd = "python -m jupytext --to notebook --update large_array_viz.py -o large_array_viz.ipynb && jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook --inplace large_array_viz.ipynb"
+description = "Rebuild the .ipynb from the .py, preserving cell ids and without outputs"
 
 # Execution is verified against a throwaway copy so the committed notebook is never modified.
 # PANEL_COMMS is forced to default because Panel otherwise detects the surrounding VS Code
