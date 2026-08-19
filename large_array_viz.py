@@ -1400,6 +1400,7 @@ def build_detail_raster(**sizing):
         title="",
         ylabel="unit, deep to superficial",
         show_legend=False,
+        xlim=(DETAIL_START, DETAIL_START + DETAIL_SECONDS),
         yticks=[(row + 0.42, str(UNIT_IDS[order])) for row, order in enumerate(busiest)],
         **sizing,
     )
