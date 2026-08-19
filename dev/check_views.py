@@ -316,7 +316,7 @@ def tier2() -> None:
             mid = (t0 + t1) / 2
 
             records = []
-            for span in (t1 - t0, 400.0, 2.0):
+            for span in (t1 - t0, 20.0, 2.0):
                 low = t0 if span > 5000 else mid
                 lav.SPIKE_TRACE.clear()
                 element = lav.spike_raster(
@@ -344,6 +344,31 @@ def tier2() -> None:
                     f" visible, {record['source']}"
                 )
 
+            # What the limit really controls is whether the widest exact span is still legible.
+            # Set it high enough to cover a wide viewport and hundreds of spikes share a pixel,
+            # which the ceiling of one spike per pixel flattens into a solid block.
+            first = int(np.searchsorted(lav.SPIKE_TIMES, mid))
+            last = min(first + lav.EXACT_LIMIT, lav.SPIKE_TIMES.size - 1)
+            low, high = float(lav.SPIKE_TIMES[first]), float(lav.SPIKE_TIMES[last])
+            lav.SPIKE_TRACE.clear()
+            widest = lav.spike_raster(x_range=(low, high), width=900, height=420)
+            assert "exact" in lav.SPIKE_TRACE[-1]["source"], (
+                f"the widest exact span read from {lav.SPIKE_TRACE[-1]['source']}"
+            )
+            per_pixel = np.nan_to_num(
+                np.asarray(widest.dimension_values(2, flat=False), dtype=float)
+            )
+            busiest, inked = float(per_pixel.max()), float((per_pixel > 0).mean())
+            assert busiest <= 12, (
+                f"{busiest:.0f} spikes share a pixel at the {high - low:.0f} s handover span,"
+                " so the exact rendering saturates before the reader ever sees marks"
+            )
+            assert inked < 0.35, (
+                f"{inked:.0%} of pixels are inked at the {high - low:.0f} s handover span"
+            )
+            print(f"     handover near {high - low:.0f} s -> {busiest:.0f} spikes in the"
+                  f" busiest pixel, {inked:.0%} of pixels inked")
+
         @check("tier2 each unit occupies a band of pixel rows, not a single row")
         def _():
             # Guards the choice of Segments over Points. Points put every spike on exactly
@@ -352,7 +377,9 @@ def tier2() -> None:
             plot = hv.renderer("bokeh").get_plot(lav.spike_raster_view)
             assert plot is not None, "raster did not render"
             lav.spike_size_stream.event(width=600, height=lav.N_UNITS * 3)
-            lav.spike_raster_view.event(x_range=(t0, t0 + 200.0))
+            # Has to be a span the exact branch serves, or this tests the binning rather than
+            # the choice of primitive.
+            lav.spike_raster_view.event(x_range=(t0, t0 + 20.0))
             fig = plot.state
             image = np.nan_to_num(
                 np.asarray(fig.renderers[0].data_source.data["image"][0])

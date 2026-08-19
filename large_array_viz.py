@@ -1229,12 +1229,16 @@ print(f"firing rates {UNIT_RATE.min():.2f} to {UNIT_RATE.max():.1f} Hz")
 # visible.
 
 # %%
-EXACT_LIMIT = 1_000_000  # above this many visible events, read the precomputed counts instead
+# Above this many visible events the exact rendering saturates rather than merely slows: 180
+# units across 1400 pixels is a quarter million cells, and past a tenth of those the marks
+# share pixels and clip to solid black.
+EXACT_LIMIT = 25_000
 
 # The coarse level, which is the pyramid idea applied to a derived field rather than to the
 # events themselves. Binning a point process is the only way to reduce it, so the coarse level
-# is a count matrix. At 2048 bins it is finer than the plot is wide and costs under 2 MB.
-COARSE_BINS = 2048
+# is a count matrix. Its bins have to beat the plot's width at the handover span, not just at
+# full extent, or zooming out of the exact regime lands on a few stretched blocks.
+COARSE_BINS = 32768
 coarse_edges = np.linspace(SPIKE_TIMES[0], SPIKE_TIMES[-1], COARSE_BINS + 1)
 coarse_counts, _, _ = np.histogram2d(
     SPIKE_TIMES, SPIKE_UNIT,
@@ -1246,7 +1250,12 @@ COARSE_SECONDS = float(np.diff(coarse_edges)[0])
 coarse_rate = (coarse_counts / COARSE_SECONDS).astype(np.float32)
 coarse_centres = (coarse_edges[:-1] + coarse_edges[1:]) / 2
 
-RATE_CEILING = float(np.percentile(coarse_rate[coarse_rate > 0], 95))
+# A rate needs a stated window, so taking the ceiling off the storage bin would let storage
+# resolution set the colour scale: at 0.3 s most non-empty bins hold one spike, which reads as
+# 3.4 Hz and lifts the ceiling by half. Averaging up first keeps it a property of the firing.
+CEILING_BINS = 16  # storage bins per reference window, so about 4.7 s
+reference_rate = coarse_rate.reshape(-1, CEILING_BINS, N_UNITS).mean(axis=1)
+RATE_CEILING = float(np.percentile(reference_rate[reference_rate > 0], 95))
 print(f"coarse matrix {coarse_rate.shape}, {coarse_rate.nbytes / 1e6:.1f} MB, "
       f"{COARSE_SECONDS:.2f} s per bin, colour ceiling {RATE_CEILING:.0f} Hz")
 
@@ -1313,15 +1322,19 @@ def spike_raster(x_range=None, width=None, height=None, **unused):
             (times, units - 0.45, times, units + 0.45),
             [time_dim, unit_dim, "time_end", "unit_end"], [count_dim],
         )
-        # Counting segments per pixel, which at this zoom is one spike or none.
+        # Counting segments per pixel, which at this zoom is rarely more than one.
         extra = dict(clim=(0, 1), clabel="spikes per pixel")
         source = f"{visible:,} exact events"
 
     SPIKE_TRACE.append({"visible": visible, "source": source, "span": high - low})
-    return rasterize(
+    raster = rasterize(
         element, dynamic=False, width=width, height=height,
         x_range=(low, high), y_range=(-0.5, N_UNITS - 0.5),
-    ).opts(**RASTER_OPTS, **extra, title=f"{source}, {high - low:.4g} s in view")
+    )
+    # Segments has four key dimensions and its aggregate two, so rasterize names them x and y.
+    # Renaming keeps the axis labels from changing at the handover.
+    return raster.redim(x=time_dim, y=unit_dim).opts(
+        **RASTER_OPTS, **extra, title=f"{source}, {high - low:.4g} s in view")
 
 
 spike_range_stream = hv.streams.RangeX()
@@ -1335,7 +1348,7 @@ spike_raster_view
 # The two regimes are not two renderings of the same quantity, and pretending otherwise would
 # be the easiest mistake to make here. Zoomed out, the value is a firing rate in hertz, which is
 # a property of each unit and is therefore comparable between one zoom level and another. Zoomed
-# in, the value is a count of spikes per pixel, which is zero or one, and dividing that by the
+# in, the value is a count of spikes per pixel, rarely more than one, and dividing that by the
 # pixel's width in time would report several hundred hertz for a single spike. So the colorbar
 # changes what it measures when the source changes, and the title says which one is in use.
 #
@@ -1345,9 +1358,9 @@ spike_raster_view
 # `clim` needs no hook and switches between the two ranges on its own.
 #
 # Colour is linear in both regimes, with an explicit ceiling at the 95th percentile of the
-# non-zero rates, so twice as dark means twice the rate. `eq_hist` would have revealed more of
-# the low-rate units at the cost of that reading, and for a quantity as routinely compared as
-# firing rate it is not worth the trade.
+# non-zero rates over a few seconds, so twice as dark means twice the rate. `eq_hist` would
+# have revealed more of the low-rate units at the cost of that reading, and for a quantity as
+# routinely compared as firing rate it is not worth the trade.
 #
 # One detail that is easy to get wrong. A colormap given as two colours is a two entry palette
 # rather than a ramp, and Bokeh then steps abruptly at the midpoint instead of shading, which
