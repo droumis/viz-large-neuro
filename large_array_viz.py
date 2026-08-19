@@ -14,14 +14,13 @@
 # %% [markdown]
 # # Interactive Visualization of Large Array Data
 #
-# Reading a terabyte of array data efficiently is a solved problem. Chunk it, compress it, and
-# let Dask read only the blocks a computation touches. Displaying it is not, because a plotting
-# library asked to draw the result will try to send every value to the browser.
+# [Dr. Demetris Roumis](https://scholar.google.com/citations?user=U7B1ov4AAAAJ)
 #
-# This notebook shows how to plot arrays far larger than the screen, reducing them at three
-# points in the path from storage to pixels, across three kinds of neuroscience data. Fluorescence microscopy is read from a
-# remote OME-Zarr store, a local field potential recording is read from a multiscale pyramid, and
-# nine million spike times are read as a point process.
+# Reading a terabyte of array data efficiently is arguably a solved problem: chunk it, compress it, and
+# let Dask read only the blocks a computation touches. Displaying it is still an issue, though, because typical plotting
+# libraries asked to draw the result will try to send every value to the browser.
+#
+# This notebook shows how to plot arrays far larger than the screen, reducing them at three of the main steps in the path from storage to pixels, across three kinds of neuroscience data: **Fluorescence microscopy** is read from a remote OME-Zarr store, a **local field potential** recording is read from a multiscale pyramid, and nine million **spike times** are read as a point process.
 #
 # > **This notebook downloads and writes about 2.9 GB.** One file of 857 MB is downloaded, a
 # > 2.1 GB pyramid is generated on first run, and 88 MB of spike times are streamed from a remote
@@ -35,14 +34,15 @@
 #
 # However large an array is, a plot has only as many pixels as the window gives it, perhaps a
 # thousand or two across a laptop screen. A browser also starts to struggle somewhere between one
-# hundred thousand and one million glyphs, because every glyph carries coordinates, style
+# hundred thousand and one million glyphs (points, line segments, etc.), because every glyph
+# typically carries coordinates, style
 # attributes, and hit-testing geometry. Neither limit grows when the data does. A single 400
 # second window of the recording used below holds 17.5 million points, which is well beyond what
-# a browser will draw at interactive speed, and that window is a twenty-fourth of the recording.
+# a browser will draw at interactive speed, and that window is only a twenty-fourth of the recording.
 #
-# The remedy is the one that governs chunked reads, which is to keep only the subset you need.
-# The difference at the display step is that the viewport defines the subset, so it has to be
-# recomputed whenever the user pans or zooms.
+# The remedy is the same as the one that governs chunked reads for computation, which is to keep only the subset you need.
+# The difference when doing display is that the viewport defines the subset, so it has to be
+# recomputed dynamically whenever the user pans or zooms.
 #
 # Reduction can happen at three places, and the diagram above summarises them. They are ordered
 # by what they cost to set up, so the useful question is always whether the first is already
@@ -50,7 +50,7 @@
 #
 # 1. **Reduce what is sent to the browser.** Either aggregate the data into an image the size of
 #    the plot, which is *rasterization*, or select the few original samples that preserve the
-#    shape of a line, which is *downsampling*. These two are alternatives, and which one applies
+#    shape of a line by dynamic *downsampling*. These two are alternatives, and which one applies
 #    depends on the kind of data. For many plots this tier is sufficient on its own.
 # 2. **Reduce what is read from storage.** A *multiscale pyramid* stores several resolutions in
 #    advance, so a viewport becomes a read of the matching level rather than a reduction of the
@@ -65,7 +65,7 @@
 # The second tier has a useful property. A pyramid written so that a large image can be loaded at
 # all is the same object as a pyramid that makes zooming responsive, so no separate structure is
 # needed for display.
-
+#
 # ## Prerequisites
 #
 # | What? | Why? |
@@ -77,11 +77,34 @@
 # | [Xarray](https://docs.xarray.dev/) | Labeled dimensions and physical coordinates |
 
 # %% [markdown]
+# ## Visualization tools used
+#
+# <div style="margin:10px">
+#     <a href="https://holoviz.org"><img style="margin:8px; display:inline; object-fit:scale-down; max-height:75px" src="https://holoviz.org/assets/holoviz-logo-stacked.svg" alt="HoloViz Logo"/></a>
+#     <a href="https://bokeh.org"><img style="margin:8px; display:inline; object-fit:scale-down; max-height:75px" src="https://holoviz.org/assets/bokeh.png" alt="Bokeh Logo"/></a>
+#     <a href="https://panel.holoviz.org"><img style="margin:8px; display:inline; object-fit:scale-down; max-height:45px" src="https://holoviz.org/assets/panel.png" alt="Panel Logo"/></a>
+#     <a href="https://hvplot.holoviz.org"><img style="margin:8px; display:inline; object-fit:scale-down; max-height:75px" src="https://holoviz.org/assets/hvplot.png" alt="hvPlot Logo"/></a>
+#     <a href="https://holoviews.org"><img style="margin:8px; display:inline; object-fit:scale-down; max-height:75px" src="https://holoviz.org/assets/holoviews.png" alt="HoloViews Logo"/></a>
+#     <a href="https://datashader.org"><img style="margin:8px; display:inline; object-fit:scale-down; max-height:75px" src="https://holoviz.org/assets/datashader.png" alt="Datashader Logo"/></a>
+# </div>
+#
+# Here we will focus on the [HoloViz](https://holoviz.org) set of open-source Python visualization tools, backed by the [Bokeh](https://bokeh.org) plotting library, but a few of these techniques have also been implemented in other libraries, including [Plotly](https://plot.ly) and [Matplotlib](https://matplotlib.org). The main packages used are:
+#
+# - [Bokeh](https://bokeh.org): Underlying package for building interactive visualization tools in Python that render to JavaScript in the browser
+# - [Panel](https://panel.holoviz.org): High-level Python syntax for apps and widgets
+# - [hvPlot](https://hvplot.holoviz.org): Quick plots from Xarray/Dask/Pandas datasets
+# - [HoloViews](https://holoviews.org): Composable "elements" for building complex plots (basis for hvPlot)
+# - [Datashader](https://datashader.org): Server-side rasterization for large or remote data
+#
+# See [PyViz](https://pyviz.org) for other Python OSS libraries if these don't meet your needs.
+
+# %% [markdown]
 # ## Plotting a small array
 #
 # An unconfigured plot of a labeled array is the starting point that the rest of this notebook
 # departs from. Both calls below produce a pannable, zoomable, hoverable Bokeh
-# plot from a Dask-backed xarray object without any plotting configuration.
+# plot from a Dask-backed xarray object without any plotting configuration. The data involved in these two plots is
+# small enough that it can all be passed directly to the browser, without any special rendering techniques.
 
 # %%
 import shutil
@@ -100,6 +123,7 @@ import panel as pn
 import pooch
 import xarray as xr
 import zarr
+
 from holoviews.operation.datashader import rasterize
 from holoviews.operation.downsample import downsample1d
 from holoviews.plotting.links import RangeToolLink
@@ -134,6 +158,9 @@ demo = xr.DataArray(
 ).chunk({"roi": 1})
 demo
 
+# %% [markdown]
+# We can use [hvPlot](https://hvplot.holoviz.org) to get a quick interactive timeseries plot of this data:
+
 # %%
 fast_hvplot_view = demo.hvplot.line(
     x="time", by="roi", responsive=True, height=300, xlabel="time (s)",
@@ -142,7 +169,7 @@ fast_hvplot_view = demo.hvplot.line(
 fast_hvplot_view
 
 # %% [markdown]
-# The same plot built from HoloViews elements takes more lines and gives more control. The
+# The same plot built from [HoloViews](https://holoviews.org) elements takes more lines, but gives more control. The
 # reason to use it here is that the two reduction strategies are HoloViews
 # Operations, and an Operation is a function from an element to a transformed element. The
 # input to `rasterize` or `downsample1d` is an element like the one below, and the output
@@ -426,24 +453,25 @@ image_levels_view
 #
 # <p><img src="assets/concept_downsample.svg" alt="Many samples per pixel reduced to the minimum and maximum at each pixel" width="460"></p>
 #
-# Rasterization is the wrong tool for a small number of long traces. Aggregating a line
-# into a density image discards the line, and for a voltage trace the shape of the line is
+# Rasterization works well for images, which are already a rasterization of the underlying
+# surface or field, but it is often the wrong tool for viewing a small number of long traces. Aggregating a line
+# into a density image discards the connectedness of the line segments, and for a voltage trace the shape of the line _is_
 # the measurement. What is needed instead is a subset of the original samples that draws
 # the same shape.
 #
-# Largest Triangle Three Buckets, described by [Steinarsson
-# (2013)](https://skemman.is/handle/1946/15343), divides the series into as many buckets as
-# there are horizontal pixels and keeps the one point per bucket that forms the largest
+# The "Largest Triangle Three Buckets" algorithm, described by [Steinarsson
+# (2013)](https://skemman.is/handle/1946/15343), divides a series into as many buckets as
+# there are horizontal pixels, and keeps the one point per bucket that forms the largest
 # triangle with its neighbours. Points that do not contribute to the visible shape are
 # dropped. The `minmax-lttb` variant first reduces each bucket to its minimum and maximum
 # before running LTTB, which is faster and preserves the envelope, so a brief spike that
 # happens to fall between selected points is not lost.
 #
-# The recording is extracellular local field potential from a Neuropixels probe in mouse,
+# The recording used here is extracellular local field potential from a Neuropixels probe in mouse,
 # released by the Allen Institute as part of the Visual Coding Neuropixels dataset.
 #
 # The files are read straight from the Allen Institute's public S3 bucket, and the two small
-# index files there make that generalizable. `sessions.csv` is 7.8 KB and lists every released
+# index files there make that approach generalizable. `sessions.csv` is 7.8 KB and lists every released
 # session; `probes.csv` is 27 KB and lists every probe, including whether it has LFP data.
 # Together they mean any session or probe in the release can be reached by changing two
 # integers, without installing the AllenSDK or downloading a catalogue.
@@ -783,7 +811,7 @@ traces_minimap_view
 # 1.7 GB of the 2.1 GB the store occupies on disk, and in return the pyramid continues to work
 # if the NWB file is moved, archived, or deleted. The cell below prints the compressed size, so
 # the figure quoted here can be checked against it.
-
+#
 # > **The next cell writes 2.1 GB** into `data/` and takes roughly a minute. It is skipped if
 # > the pyramid is already present.
 
@@ -948,11 +976,11 @@ full_resolution_view
 # %% [markdown]
 # ## Referencing an archive instead of copying it
 #
-# The pyramid above holds a complete second copy of the recording, and that is worth
+# The pyramid above holds a complete second copy of the recording, which is worth
 # questioning. The bytes already exist in the NWB file, compressed and chunked. Copying them
 # to get a Zarr store means paying for the same samples twice.
 #
-# A virtual Zarr store avoids that. What a Zarr reader needs is not the bytes but a description
+# A "virtual Zarr store" avoids that. What a Zarr reader needs is not the bytes but a description
 # of where each chunk begins and ends, and `virtualizarr` produces exactly that by reading the
 # HDF5 chunk index and writing a manifest of paths, offsets, and lengths. Any Zarr reader then
 # treats the manifest as an array, and the original file is never modified or duplicated.
@@ -1108,7 +1136,7 @@ if HAVE_VIRTUALIZARR:
 # The spike times are in the session-level NWB file, `SESSION_URL` from earlier, which is
 # 1.86 GB. Only about 74 MB of it is needed. The bucket serves byte range requests, so the file
 # is opened over HTTP and only the units table and the relevant spike times are transferred.
-
+#
 # > **The next cell transfers about 74 MB** over HTTP and writes an 88 MB cache into `data/`.
 # > The remote file is 1.86 GB and is not downloaded in full. It is skipped if the cache is
 # > already present.
@@ -1427,16 +1455,18 @@ spike_field_view
 # so keeps group identity through the reduction even though individual identity is lost. That
 # recovers, at the level of the group, what the raster above gave up.
 #
-# The hvPlot user guide works exactly this case through, on neural waveforms, in [Multiple Lines
+# The hvPlot user guide works through exactly this case, using neural waveforms, in [Multiple Lines
 # Per Category](https://hvplot.holoviz.org/en/docs/latest/user_guide/Large_Timeseries.html#multiple-lines-per-category-example).
 # It also covers the one preparation step that is easy to miss, which is that the curves have to be
 # concatenated into a single frame separated by rows of `NaN`, so that the end of one waveform is
 # not joined to the start of the next.
-
-
+#
+# <p><img src="assets/datashade_by_category.png" alt="Hundreds of overlapping waveforms in three colours, each colour a category kept separate by the aggregator" width="700"></p>
 
 # %% [markdown]
 # ## Serving the plots as an app
+#
+# <p><img src="assets/servable_app.png" alt="The served app, with a sidebar of controls beside the imaging tab showing a rasterized plane" width="420"></p>
 #
 # Everything above is a notebook cell, which is where analysis is done but not where a tool
 # is handed to someone else. The same objects compose into a Panel template that runs as a
