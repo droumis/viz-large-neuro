@@ -364,6 +364,41 @@ def tier2() -> None:
             )
             print(f"     {filled} of {image.shape[0]} rows filled for {lav.N_UNITS} units")
 
+        @check("tier2 the colorbar label follows the regime the raster switched to")
+        def _():
+            # HoloViews sets the colorbar title only at plot creation (holoviz/holoviews#5977),
+            # so this passes only while the sync_clabel hook is attached. No single screenshot
+            # shows it, since the label is only wrong relative to the frame beside it.
+            t0, t1 = float(lav.SPIKE_TIMES[0]), float(lav.SPIKE_TIMES[-1])
+            mid = (t0 + t1) / 2
+            plot = hv.renderer("bokeh").get_plot(lav.spike_raster_view)
+            assert plot is not None, "raster did not render"
+
+            # A DynamicMap serves a repeated stream value from its cache without calling the
+            # callback, which would leave nothing new in SPIKE_TRACE to compare against. So no
+            # span here repeats another, and none is the full extent the plot already rendered
+            # with, which also keeps this check independent of the ones above it.
+            seen = []
+            for low, high in ((t0, t1 - 0.5), (mid, mid + 2.0), (t0, t1 - 1.5)):
+                lav.SPIKE_TRACE.clear()
+                lav.spike_raster_view.event(x_range=(low, high))
+                assert lav.SPIKE_TRACE, f"a {high - low:.0f} s span rendered from cache"
+                source = lav.SPIKE_TRACE[-1]["source"]
+                title = plot.handles["colorbar"].title
+                # The invariant is asserted rather than the exact wording, so rewording a
+                # clabel in the notebook does not fail this check with a message that blames
+                # the colorbar. A precomputed frame is a rate and has to carry a frequency
+                # unit; an exact frame is a per-pixel count and must not.
+                precomputed = "precomputed" in source
+                assert ("Hz" in title) == precomputed, (
+                    f"a {high - low:.0f} s span read from {source} but the colorbar"
+                    f" reads {title!r}"
+                )
+                seen.append(title)
+            # A hook that only ever fires on the first frame would pass the checks above.
+            assert len(set(seen)) == 2, f"the colorbar label never changed: {seen}"
+            print(f"     colorbar tracked {seen[0]!r} -> {seen[1]!r} -> {seen[2]!r}")
+
     if getattr(lav, "servable_app", None) is not None:
         @check("tier2 the served app exposes both tabs and a plot in the active one")
         def _():

@@ -1237,10 +1237,20 @@ region_ticks = [
 # hard at the midpoint instead of shading. This is a full 256 step reversed grey.
 RASTER_CMAP = colorcet.gray[::-1]
 
+
+# Copies the frame's `clabel` onto the Bokeh colorbar, which HoloViews sets only at plot
+# creation (holoviz/holoviews#5977). Without this the raster labels spikes per pixel as hertz.
+def sync_clabel(plot, element):
+    colorbar = plot.handles.get("colorbar")
+    if colorbar is not None and plot.clabel is not None:
+        colorbar.title = plot.clabel
+
+
 RASTER_OPTS = dict(
     cmap=RASTER_CMAP,
     cnorm="linear",
     colorbar=True,
+    hooks=[sync_clabel],
     responsive=True,
     min_height=420,
     ylim=(-0.5, N_UNITS - 0.5),
@@ -1300,6 +1310,11 @@ spike_raster_view
 # in, the value is a count of spikes per pixel, which is zero or one, and dividing that by the
 # pixel's width in time would report several hundred hertz for a single spike. So the colorbar
 # changes what it measures when the source changes, and the title says which one is in use.
+#
+# Making the colorbar say so takes a hook. HoloViews writes the colorbar title when the plot is
+# created and never rewrites it, so a per-frame `clabel` on its own leaves the label on whichever
+# regime rendered first while the numbers beside it change meaning (holoviz/holoviews#5977).
+# `clim` needs no hook and switches between the two ranges on its own.
 #
 # Colour is linear in both regimes, with an explicit ceiling at the 95th percentile of the
 # non-zero rates, so twice as dark means twice the rate. `eq_hist` would have revealed more of
