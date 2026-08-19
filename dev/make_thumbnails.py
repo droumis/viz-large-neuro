@@ -1,12 +1,12 @@
-"""Build the section preview thumbnails that the notebook embeds from assets/.
+"""Build the preview thumbnails that the notebook and the banner embed from assets/.
 
     python dev/serve_views.py &
     python dev/shoot_views.py
     python dev/make_thumbnails.py
 
 Reads the screenshots written by shoot_views.py, trims the surrounding whitespace, scales
-them to a fixed width, and writes them to assets/. The notebook references those files with
-relative paths, so they have to be committed alongside it.
+them to a fixed width, and writes them to assets/. They are referenced by relative path, so
+they have to be committed alongside the notebook.
 
 Thumbnails are written at twice their display width so they stay sharp on a high density
 display, and quantized to a palette because these are flat line plots and screenshots of UI
@@ -28,16 +28,17 @@ SCALE = 2
 
 # The view each section previews, and whether to trim whitespace on all sides. The served
 # app is a full page whose left aligned sidebar is part of the point, so it is only trimmed
-# at the bottom.
+# at the bottom. servable_app is embedded in the notebook and the other three feed banner.png
+# via make_banner.py. The commented entries are referenced by neither.
 THUMBNAILS = {
-    "fast_hvplot_view": True,
+    # "fast_hvplot_view": True,
     "image_view": True,
-    "image_levels_view": True,
+    # "image_levels_view": True,
     "traces_minimap_view": True,
-    "pyramid_app": True,
+    # "pyramid_app": True,
     "servable_app": False,
     "spike_raster_view": True,
-    "spike_field_view": True,
+    # "spike_field_view": True,
 }
 
 
